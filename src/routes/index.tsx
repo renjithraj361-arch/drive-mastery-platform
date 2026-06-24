@@ -47,9 +47,10 @@ function Home() {
               <Link to="/book" className="rounded-full bg-white px-6 py-3 text-sm font-bold text-foreground shadow-glow transition hover:scale-[1.02]">
                 {t("hero_cta_book")}
               </Link>
-              <Link to="/programs" className="rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-bold text-white backdrop-blur transition hover:bg-white/20">
-                {t("hero_cta_start")}
+              <Link to="/learning" className="rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-bold text-white backdrop-blur transition hover:bg-white/20">
+                {t("hero_cta_learning")}
               </Link>
+
             </div>
 
             <div className="mt-6 flex flex-wrap gap-2 text-sm">
