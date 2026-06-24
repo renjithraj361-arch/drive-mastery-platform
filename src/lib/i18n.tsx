@@ -215,8 +215,69 @@ const ml: Dict = {
   legal_disclaimer: "ഡിസ്ക്ലെയിമർ",
   legal_refund: "റീഫണ്ട് നയം",
   legal_help: "സഹായം",
+  legal_cookies: "കുക്കി നയം",
 
   lang_label: "ഭാഷ",
+
+  nav_learning: "ലേണിങ് വിശദാംശങ്ങൾ",
+  nav_signs: "ട്രാഫിക് സൈൻ",
+  nav_dashboard: "ഡാഷ്ബോർഡ്",
+  nav_admin: "അഡ്മിൻ",
+  nav_signin: "സൈൻ ഇൻ",
+  nav_signout: "സൈൻ ഔട്ട്",
+
+  hero_cta_learning: "ലേണിങ് വിശദാംശങ്ങൾ",
+
+  learning_title: "ലേണിങ് വിശദാംശങ്ങൾ",
+  learning_sub: "ആഴത്തിലുള്ള ഡ്രൈവിങ് അറിവ് — പ്രായോഗികം, പടിപടിയായി വിശദീകരിച്ചത്.",
+
+  signs_warning: "മുന്നറിയിപ്പ് സൈനുകൾ",
+  signs_mandatory: "നിർബന്ധിത സൈനുകൾ",
+  signs_informatory: "വിവര സൈനുകൾ",
+
+  auth_title: "സൈൻ ഇൻ",
+  auth_sub: "നിങ്ങളുടെ ബുക്കിങ്, പേയ്മെന്റ്, അക്കൗണ്ട് ലഭ്യമാക്കുക.",
+  auth_tab_signin: "സൈൻ ഇൻ",
+  auth_tab_signup: "സൈൻ അപ്",
+  auth_tab_phone: "ഫോൺ OTP",
+  auth_tab_forgot: "പാസ്‌വേഡ് മറന്നോ",
+  auth_email: "ഇമെയിൽ",
+  auth_password: "പാസ്‌വേഡ്",
+  auth_full_name: "പേര്",
+  auth_phone: "മൊബൈൽ (കൺട്രി കോഡ്)",
+  auth_otp: "OTP നൽകുക",
+  auth_send_otp: "OTP അയക്കൂ",
+  auth_verify_otp: "OTP പരിശോധിക്കൂ",
+  auth_signin_btn: "സൈൻ ഇൻ",
+  auth_signup_btn: "അക്കൗണ്ട് ഉണ്ടാക്കൂ",
+  auth_google: "Google വഴി തുടരുക",
+  auth_forgot_btn: "റീസെറ്റ് ലിങ്ക് അയക്കൂ",
+  auth_or: "അല്ലെങ്കിൽ",
+  auth_required: "തുടരാൻ സൈൻ ഇൻ ചെയ്യുക.",
+
+  reset_title: "പുതിയ പാസ്‌വേഡ് സജ്ജമാക്കുക",
+  reset_btn: "പാസ്‌വേഡ് അപ്ഡേറ്റ് ചെയ്യൂ",
+  reset_success: "പാസ്‌വേഡ് അപ്ഡേറ്റ് ചെയ്തു. ഇപ്പോൾ സൈൻ ഇൻ ചെയ്യാം.",
+
+  book_signin_required: "ബുക്ക് ചെയ്യാൻ സൈൻ ഇൻ ചെയ്യുക.",
+  book_pay: "ബുക്കിങ് ഫീ അടയ്ക്കൂ",
+  book_saved: "ബുക്കിങ് സേവ് ചെയ്തു. ഉടൻ WhatsApp വഴി സ്ഥിരീകരിക്കും.",
+  book_status: "സ്റ്റാറ്റസ്",
+  book_amount_label: "ബുക്കിങ് ഫീ (INR)",
+
+  dashboard_title: "എന്റെ ഡാഷ്ബോർഡ്",
+  dashboard_profile: "പ്രൊഫൈൽ",
+  dashboard_bookings: "ബുക്കിങ്ങുകൾ",
+  dashboard_payments: "പേയ്മെന്റുകൾ",
+  dashboard_empty: "ഇതുവരെ ഒന്നുമില്ല.",
+  dashboard_cancel: "റദ്ദാക്കുക",
+  dashboard_pay_now: "ഇപ്പോൾ അടയ്ക്കൂ",
+
+  admin_title: "അഡ്മിൻ പാനൽ",
+  admin_all_bookings: "എല്ലാ ബുക്കിങ്ങുകൾ",
+  admin_all_payments: "എല്ലാ പേയ്മെന്റുകൾ",
+  admin_export: "CSV എക്സ്പോർട്ട്",
+  admin_no_access: "അഡ്മിൻ ആക്സസ് ആവശ്യമാണ്.",
 };
 
 const dicts: Record<Lang, Dict> = { en, ml };
