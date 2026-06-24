@@ -19,8 +19,10 @@ export function Footer() {
           <div className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">Explore</div>
           <ul className="space-y-2 text-sm">
             <li><Link to="/programs" className="hover:text-primary">{t("nav_programs")}</Link></li>
+            <li><Link to="/learning" className="hover:text-primary">{t("nav_learning")}</Link></li>
             <li><Link to="/vehicle" className="hover:text-primary">{t("nav_vehicle")}</Link></li>
             <li><Link to="/safety" className="hover:text-primary">{t("nav_safety")}</Link></li>
+            <li><Link to="/signs" className="hover:text-primary">{t("nav_signs")}</Link></li>
             <li><Link to="/book" className="hover:text-primary">{t("nav_book")}</Link></li>
           </ul>
         </div>
@@ -31,9 +33,13 @@ export function Footer() {
             <li><Link to="/contact" className="hover:text-primary">{t("legal_contact")}</Link></li>
             <li><Link to="/privacy" className="hover:text-primary">{t("legal_privacy")}</Link></li>
             <li><Link to="/terms" className="hover:text-primary">{t("legal_terms")}</Link></li>
+            <li><Link to="/refund" className="hover:text-primary">{t("legal_refund")}</Link></li>
+            <li><Link to="/disclaimer" className="hover:text-primary">{t("legal_disclaimer")}</Link></li>
+            <li><Link to="/cookies" className="hover:text-primary">{t("legal_cookies")}</Link></li>
             <li><Link to="/faq" className="hover:text-primary">{t("nav_faq")}</Link></li>
           </ul>
         </div>
+
       </div>
       <div className="border-t border-border/60 py-4 text-center text-xs text-muted-foreground">
         © {year} {t("brand")}. {t("footer_rights")}
