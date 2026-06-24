@@ -87,7 +87,13 @@ function Book() {
 
   return (
     <Section kicker={t("nav_book")} title={t("book_title")} subtitle={t("book_sub")}>
-      <form onSubmit={(e) => submit(e, false)} className="grid gap-4 rounded-3xl border border-border bg-card p-6 shadow-card sm:p-8 lg:grid-cols-2">
+      <form
+        onSubmit={(e) => {
+          const action = ((e.nativeEvent as SubmitEvent).submitter as HTMLButtonElement | null)?.value;
+          submit(e, action === "pay");
+        }}
+        className="grid gap-4 rounded-3xl border border-border bg-card p-6 shadow-card sm:p-8 lg:grid-cols-2"
+      >
         <Field label={t("book_name")} name="name" required defaultValue={(user.user_metadata as any)?.full_name ?? ""} />
         <Field label={t("book_mobile")} name="mobile" type="tel" required pattern="[0-9+\\s\\-]{7,15}" />
         <Field label={t("book_email")} name="email" type="email" defaultValue={user.email ?? ""} />
@@ -104,15 +110,15 @@ function Book() {
         <Field label={t("book_time")} name="time" type="time" required />
 
         <div className="lg:col-span-2 flex flex-col gap-2 sm:flex-row">
-          <button type="submit" disabled={busy} className="flex-1 rounded-full bg-orange-gradient px-6 py-3 text-sm font-bold text-primary-foreground shadow-glow transition hover:scale-[1.01] disabled:opacity-60">
+          <button type="submit" name="action" value="save" disabled={busy} className="flex-1 rounded-full bg-orange-gradient px-6 py-3 text-sm font-bold text-primary-foreground shadow-glow transition hover:scale-[1.01] disabled:opacity-60">
             {t("book_submit")}
           </button>
-          <button type="button" disabled={busy} onClick={(e) => submit(e.currentTarget.form!.dispatchEvent(new Event("submit", { cancelable: true, bubbles: true })) as any, true)}
-            className="flex-1 rounded-full border border-border bg-secondary px-6 py-3 text-sm font-bold disabled:opacity-60">
+          <button type="submit" name="action" value="pay" disabled={busy} className="flex-1 rounded-full border border-border bg-secondary px-6 py-3 text-sm font-bold disabled:opacity-60">
             {t("book_pay")}
           </button>
         </div>
         {status && <p className="lg:col-span-2 text-center text-sm text-muted-foreground">{status}</p>}
+
       </form>
 
       <p className="mt-6 text-center text-sm text-muted-foreground">
