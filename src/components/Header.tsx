@@ -1,20 +1,31 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { useI18n } from "@/lib/i18n";
+import { useAuth } from "@/lib/use-auth";
+import { supabase } from "@/integrations/supabase/client";
 
 export function Header() {
   const { t, lang, setLang } = useI18n();
+  const { user } = useAuth();
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
   const links = [
     { to: "/", label: t("nav_home") },
     { to: "/programs", label: t("nav_programs") },
+    { to: "/learning", label: t("nav_learning") },
     { to: "/vehicle", label: t("nav_vehicle") },
     { to: "/safety", label: t("nav_safety") },
+    { to: "/signs", label: t("nav_signs") },
     { to: "/book", label: t("nav_book") },
     { to: "/about", label: t("nav_about") },
     { to: "/contact", label: t("nav_contact") },
   ] as const;
+
+  async function signOut() {
+    await supabase.auth.signOut();
+    navigate({ to: "/" });
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
@@ -29,31 +40,45 @@ export function Header() {
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-1 xl:flex">
           {links.map((l) => (
             <Link
               key={l.to}
               to={l.to}
               activeOptions={{ exact: l.to === "/" }}
-              className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-secondary hover:text-foreground data-[status=active]:bg-secondary data-[status=active]:text-foreground"
+              className="rounded-md px-2.5 py-2 text-sm font-medium text-muted-foreground transition hover:bg-secondary hover:text-foreground data-[status=active]:bg-secondary data-[status=active]:text-foreground"
             >
               {l.label}
             </Link>
           ))}
+          {user ? (
+            <>
+              <Link to="/dashboard" className="rounded-md px-2.5 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary hover:text-foreground data-[status=active]:bg-secondary data-[status=active]:text-foreground">
+                {t("nav_dashboard")}
+              </Link>
+              <button onClick={signOut} className="rounded-md px-2.5 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary hover:text-foreground">
+                {t("nav_signout")}
+              </button>
+            </>
+          ) : (
+            <Link to="/auth" className="ml-1 rounded-full bg-orange-gradient px-3 py-1.5 text-sm font-semibold text-primary-foreground shadow-glow">
+              {t("nav_signin")}
+            </Link>
+          )}
           <LangToggle lang={lang} setLang={setLang} />
         </nav>
 
         <button
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border lg:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border xl:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Menu"
         >
-          <span className="i">☰</span>
+          <span>☰</span>
         </button>
       </div>
 
       {open && (
-        <div className="border-t border-border/60 bg-background lg:hidden">
+        <div className="border-t border-border/60 bg-background xl:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-3">
             {links.map((l) => (
               <Link
@@ -66,6 +91,20 @@ export function Header() {
                 {l.label}
               </Link>
             ))}
+            {user ? (
+              <>
+                <Link to="/dashboard" onClick={() => setOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary hover:text-foreground">
+                  {t("nav_dashboard")}
+                </Link>
+                <button onClick={() => { setOpen(false); signOut(); }} className="rounded-md px-3 py-2 text-left text-sm font-medium text-muted-foreground hover:bg-secondary hover:text-foreground">
+                  {t("nav_signout")}
+                </button>
+              </>
+            ) : (
+              <Link to="/auth" onClick={() => setOpen(false)} className="rounded-md bg-orange-gradient px-3 py-2 text-sm font-semibold text-primary-foreground shadow-glow">
+                {t("nav_signin")}
+              </Link>
+            )}
             <div className="pt-2">
               <LangToggle lang={lang} setLang={setLang} />
             </div>
