@@ -77,8 +77,69 @@ const en: Dict = {
   legal_disclaimer: "Disclaimer",
   legal_refund: "Refund Policy",
   legal_help: "Help & Support",
+  legal_cookies: "Cookie Policy",
 
   lang_label: "Language",
+
+  nav_learning: "Learning Details",
+  nav_signs: "Traffic Signs",
+  nav_dashboard: "Dashboard",
+  nav_admin: "Admin",
+  nav_signin: "Sign In",
+  nav_signout: "Sign Out",
+
+  hero_cta_learning: "Learning Details",
+
+  learning_title: "Learning Details",
+  learning_sub: "In-depth driving knowledge — practical, road-tested, and explained step by step.",
+
+  signs_warning: "Warning Signs",
+  signs_mandatory: "Mandatory Signs",
+  signs_informatory: "Informatory Signs",
+
+  auth_title: "Sign In",
+  auth_sub: "Access your bookings, payments and account.",
+  auth_tab_signin: "Sign In",
+  auth_tab_signup: "Sign Up",
+  auth_tab_phone: "Phone OTP",
+  auth_tab_forgot: "Forgot Password",
+  auth_email: "Email",
+  auth_password: "Password",
+  auth_full_name: "Full Name",
+  auth_phone: "Mobile (with country code)",
+  auth_otp: "Enter OTP",
+  auth_send_otp: "Send OTP",
+  auth_verify_otp: "Verify OTP",
+  auth_signin_btn: "Sign In",
+  auth_signup_btn: "Create Account",
+  auth_google: "Continue with Google",
+  auth_forgot_btn: "Send reset link",
+  auth_or: "or",
+  auth_required: "You need to sign in to continue.",
+
+  reset_title: "Set a new password",
+  reset_btn: "Update password",
+  reset_success: "Password updated. You can now sign in.",
+
+  book_signin_required: "Please sign in to book a training slot.",
+  book_pay: "Pay Booking Fee",
+  book_saved: "Booking saved. We'll confirm shortly on WhatsApp.",
+  book_status: "Status",
+  book_amount_label: "Booking Fee (INR)",
+
+  dashboard_title: "My Dashboard",
+  dashboard_profile: "Profile",
+  dashboard_bookings: "Bookings",
+  dashboard_payments: "Payments",
+  dashboard_empty: "Nothing here yet.",
+  dashboard_cancel: "Cancel",
+  dashboard_pay_now: "Pay Now",
+
+  admin_title: "Admin Panel",
+  admin_all_bookings: "All Bookings",
+  admin_all_payments: "All Payments",
+  admin_export: "Export CSV",
+  admin_no_access: "Admin access required.",
 };
 
 const ml: Dict = {
