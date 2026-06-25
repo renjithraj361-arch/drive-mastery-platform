@@ -13,3 +13,6 @@ export default defineConfig({
     server: { entry: "server" },
   },
 });
+build: {
+  chunkSizeWarningLimit: 2000
+}
