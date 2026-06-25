@@ -1,20 +1,18 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "dist/public",
+  "outputDirectory": "dist",
   "env": {
     "NODE_ENV": "production"
   },
   "functions": {
-    "dist/server.js": {
-      "runtime": "nodejs20.x",
-      "memory": 1024,
-      "maxDuration": 60
+    "api/**/*.ts": {
+      "runtime": "nodejs20.x"
     }
   },
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/dist/server.js"
+      "destination": "/"
     }
   ]
 }
