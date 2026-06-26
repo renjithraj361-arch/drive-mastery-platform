@@ -1,5 +1,7 @@
 {
-  "buildCommand": "cd client && npm run build",
-  "outputDirectory": "client/dist",
-  "framework": "vite"
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "NITRO_PRESET=vercel bun run build",
+  "outputDirectory": ".vercel/output",
+  "framework": null,
+  "installCommand": "bun install"
 }
