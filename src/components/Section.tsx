@@ -16,16 +16,23 @@ export function Section({
   className?: string;
 }) {
   return (
-    <section id={id} className={`mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 ${className}`}>
+    <section id={id} className={`mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 ${className}`}>
       {(kicker || title || subtitle) && (
-        <div className="mb-10 max-w-3xl">
+        <div className="mb-12 max-w-3xl">
           {kicker && (
-            <div className="mb-3 inline-block rounded-full bg-secondary px-3 py-1 text-xs font-semibold uppercase tracking-widest text-secondary-foreground">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border/80 bg-card/40 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-primary backdrop-blur">
+              <span className="h-1 w-1 rounded-full bg-primary" />
               {kicker}
             </div>
           )}
-          {title && <h2 className="font-display text-3xl text-balance sm:text-4xl lg:text-5xl">{title}</h2>}
-          {subtitle && <p className="mt-3 text-base text-muted-foreground sm:text-lg">{subtitle}</p>}
+          {title && (
+            <h2 className="font-display text-4xl text-balance text-gradient sm:text-5xl lg:text-6xl">
+              {title}
+            </h2>
+          )}
+          {subtitle && (
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">{subtitle}</p>
+          )}
         </div>
       )}
       {children}
