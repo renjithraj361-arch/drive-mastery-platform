@@ -247,6 +247,10 @@ function Home() {
               </ul>
             </article>
           ))}
+          </div>
+          <aside className="space-y-6">
+            <AdSlot slot="sidebar" desktopOnly />
+          </aside>
         </div>
         <div className="mt-12 text-center">
           <Link to="/programs" className="btn-premium btn-premium-hover">
