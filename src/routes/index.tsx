@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useI18n, programsContent } from "@/lib/i18n";
 import { Section } from "@/components/Section";
+import { AdSlot } from "@/components/AdSlot";
 import heroCar from "@/assets/hero-car.jpg";
 
 export const Route = createFileRoute("/")({
@@ -28,6 +29,11 @@ function Home() {
 
   return (
     <>
+      {/* HEADER BANNER AD */}
+      <div className="mx-auto max-w-7xl px-4 pt-4 sm:px-6 lg:px-8">
+        <AdSlot slot="header" />
+      </div>
+
       {/* HERO */}
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-hero" />
@@ -210,10 +216,16 @@ function Home() {
         </div>
       </Section>
 
-      {/* PROGRAMS */}
+      {/* IN-CONTENT AD */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <AdSlot slot="in-content" />
+      </div>
+
+      {/* PROGRAMS + SIDEBAR */}
       <Section kicker={t("programs_title")} title={t("programs_title")} subtitle={t("programs_sub")}>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {programs.map((p, i) => (
+        <div className="grid gap-8 lg:grid-cols-[1fr_300px]">
+          <div className="grid gap-6 sm:grid-cols-2">
+            {programs.map((p, i) => (
             <article
               key={p.title}
               className="glass group relative overflow-hidden rounded-3xl p-7 transition hover:-translate-y-2"
