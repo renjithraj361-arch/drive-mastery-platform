@@ -15,6 +15,7 @@ import { I18nProvider } from "../lib/i18n";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { FloatingWhatsApp } from "../components/FloatingWhatsApp";
+import { AdSlot } from "../components/AdSlot";
 
 function NotFoundComponent() {
   return (
@@ -157,6 +158,9 @@ function RootComponent() {
           <main className="flex-1">
             <Outlet />
           </main>
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <AdSlot slot="footer" />
+          </div>
           <Footer />
           <FloatingWhatsApp />
         </div>
