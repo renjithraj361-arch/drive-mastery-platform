@@ -11,6 +11,9 @@ export default defineConfig({
     build: {
       chunkSizeWarningLimit: 2000,
     },
+    ssr: {
+      noExternal: ["@vercel/analytics"],
+    },
   },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
