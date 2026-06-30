@@ -120,6 +120,22 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+  dangerouslySetInnerHTML={{
+    __html: `
+      (function(w,d,s,l,i){
+        w[l]=w[l]||[];
+        w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),
+            dl=l!='dataLayer' ? '&l='+l : '';
+        j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id=GTM-K2R6K2XP'+dl;
+        f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-K2R6K2XP');
+    `,
+  }}
+/>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7684149874357678"
      crossorigin="anonymous"></script>
         <script
@@ -141,6 +157,14 @@ function RootShell({ children }: { children: ReactNode }) {
   
       </head>
       <body>
+        <noscript>
+  <iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-K2R6K2XP"
+    height="0"
+    width="0"
+    style={{ display: "none", visibility: "hidden" }}
+  />
+</noscript>
         {children}
         <Scripts />
       </body>
