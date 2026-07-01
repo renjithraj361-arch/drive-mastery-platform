@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { Section } from "@/components/Section";
 
 const faqs = [
@@ -20,18 +21,51 @@ export const Route = createFileRoute("/faq")({
 });
 
 function Faq() {
+  const [open, setOpen] = useState<number | null>(0);
   return (
     <Section kicker="Help" title="Frequently Asked Questions">
       <div className="mx-auto max-w-3xl space-y-3">
-        {faqs.map((f) => (
-          <details key={f.q} className="group rounded-2xl border border-border bg-card p-5 shadow-card open:shadow-glow">
-            <summary className="cursor-pointer list-none font-display text-lg">
-              <span className="mr-2 text-primary">›</span>
-              {f.q}
-            </summary>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
-          </details>
-        ))}
+        {faqs.map((f, i) => {
+          const isOpen = open === i;
+          return (
+            <div
+              key={f.q}
+              className={`overflow-hidden rounded-2xl border bg-card shadow-card transition-all ${
+                isOpen ? "border-primary/50 shadow-glow" : "border-border"
+              }`}
+            >
+              <button
+                type="button"
+                onClick={() => setOpen(isOpen ? null : i)}
+                aria-expanded={isOpen}
+                className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+              >
+                <span className="font-display text-base sm:text-lg text-foreground break-words">
+                  {f.q}
+                </span>
+                <span
+                  aria-hidden
+                  className={`grid h-8 w-8 shrink-0 place-items-center rounded-full bg-orange-gradient text-primary-foreground text-lg font-bold transition-transform duration-300 ${
+                    isOpen ? "rotate-180" : ""
+                  }`}
+                >
+                  {isOpen ? "−" : "+"}
+                </span>
+              </button>
+              <div
+                className={`grid transition-all duration-300 ease-out ${
+                  isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <p className="px-5 pb-5 text-sm leading-relaxed text-muted-foreground">
+                    {f.a}
+                  </p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </Section>
   );

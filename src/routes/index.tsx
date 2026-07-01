@@ -65,7 +65,7 @@ function Home() {
               {t("hero_kicker")}
             </div>
 
-            <h1 className="font-display text-[3.25rem] leading-[0.95] text-balance text-gradient sm:text-7xl lg:text-[5.5rem]">
+            <h1 className="font-display text-4xl leading-[1.02] text-balance text-gradient xs:text-5xl sm:text-6xl lg:text-[5.5rem] break-words">
               Train In <br />
               <span className="text-gradient-orange">Your Own Car.</span>
             </h1>

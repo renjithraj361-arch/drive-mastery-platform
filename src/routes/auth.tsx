@@ -27,10 +27,18 @@ function AuthPage() {
   async function onGoogle() {
     setMsg(null);
     setBusy(true);
-    const res = await lovable.auth.signInWithOAuth("google", { redirect_uri: window.location.origin + "/dashboard" });
-    setBusy(false);
-    if ((res as any).error) setMsg(String((res as any).error?.message ?? "Sign-in failed"));
-    else if (!(res as any).redirected) navigate({ to: "/dashboard" });
+    try {
+      const res = await lovable.auth.signInWithOAuth("google", { redirect_uri: window.location.origin });
+      if ((res as any)?.error) {
+        setMsg(String((res as any).error?.message ?? "Google sign-in failed. Please try again."));
+      } else if (!(res as any)?.redirected) {
+        navigate({ to: "/dashboard" });
+      }
+    } catch (err: any) {
+      setMsg(err?.message ?? "Google sign-in failed. Please try again.");
+    } finally {
+      setBusy(false);
+    }
   }
 
   async function onSignIn(e: React.FormEvent<HTMLFormElement>) {

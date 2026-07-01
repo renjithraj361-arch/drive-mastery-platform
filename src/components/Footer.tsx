@@ -21,7 +21,7 @@ export function Footer() {
               </div>
             </div>
           </div>
-          <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">{t("footer_built")}</p>
+          <p className="mt-5 max-w-md text-sm leading-relaxed text-white/75">{t("footer_built")}</p>
           <div className="mt-6 flex flex-wrap gap-2">
             <a href="tel:+919447480651" className="btn-premium btn-premium-hover !px-4 !py-2.5 !text-xs">
               +91 94474 80651
@@ -33,30 +33,30 @@ export function Footer() {
         </div>
         <div>
           <div className="mb-4 text-[10px] font-bold uppercase tracking-[0.3em] text-primary">Explore</div>
-          <ul className="space-y-3 text-sm text-muted-foreground">
-            <li><Link to="/programs" className="transition hover:text-foreground">{t("nav_programs")}</Link></li>
-            <li><Link to="/learning" className="transition hover:text-foreground">{t("nav_learning")}</Link></li>
-            <li><Link to="/vehicle" className="transition hover:text-foreground">{t("nav_vehicle")}</Link></li>
-            <li><Link to="/safety" className="transition hover:text-foreground">{t("nav_safety")}</Link></li>
-            <li><Link to="/signs" className="transition hover:text-foreground">{t("nav_signs")}</Link></li>
-            <li><Link to="/book" className="transition hover:text-foreground">{t("nav_book")}</Link></li>
+          <ul className="space-y-3 text-sm text-white/85">
+            <li><Link to="/programs" className="transition hover:text-primary">{t("nav_programs")}</Link></li>
+            <li><Link to="/learning" className="transition hover:text-primary">{t("nav_learning")}</Link></li>
+            <li><Link to="/vehicle" className="transition hover:text-primary">{t("nav_vehicle")}</Link></li>
+            <li><Link to="/safety" className="transition hover:text-primary">{t("nav_safety")}</Link></li>
+            <li><Link to="/signs" className="transition hover:text-primary">{t("nav_signs")}</Link></li>
+            <li><Link to="/book" className="transition hover:text-primary">{t("nav_book")}</Link></li>
           </ul>
         </div>
         <div>
           <div className="mb-4 text-[10px] font-bold uppercase tracking-[0.3em] text-primary">Company</div>
-          <ul className="space-y-3 text-sm text-muted-foreground">
-            <li><Link to="/about" className="transition hover:text-foreground">{t("legal_about")}</Link></li>
-            <li><Link to="/contact" className="transition hover:text-foreground">{t("legal_contact")}</Link></li>
-            <li><Link to="/privacy" className="transition hover:text-foreground">{t("legal_privacy")}</Link></li>
-            <li><Link to="/terms" className="transition hover:text-foreground">{t("legal_terms")}</Link></li>
-            <li><Link to="/refund" className="transition hover:text-foreground">{t("legal_refund")}</Link></li>
-            <li><Link to="/disclaimer" className="transition hover:text-foreground">{t("legal_disclaimer")}</Link></li>
-            <li><Link to="/cookies" className="transition hover:text-foreground">{t("legal_cookies")}</Link></li>
-            <li><Link to="/faq" className="transition hover:text-foreground">{t("nav_faq")}</Link></li>
+          <ul className="space-y-3 text-sm text-white/85">
+            <li><Link to="/about" className="transition hover:text-primary">{t("legal_about")}</Link></li>
+            <li><Link to="/contact" className="transition hover:text-primary">{t("legal_contact")}</Link></li>
+            <li><Link to="/privacy" className="transition hover:text-primary">{t("legal_privacy")}</Link></li>
+            <li><Link to="/terms" className="transition hover:text-primary">{t("legal_terms")}</Link></li>
+            <li><Link to="/refund" className="transition hover:text-primary">{t("legal_refund")}</Link></li>
+            <li><Link to="/disclaimer" className="transition hover:text-primary">{t("legal_disclaimer")}</Link></li>
+            <li><Link to="/cookies" className="transition hover:text-primary">{t("legal_cookies")}</Link></li>
+            <li><Link to="/faq" className="transition hover:text-primary">{t("nav_faq")}</Link></li>
           </ul>
         </div>
       </div>
-      <div className="relative border-t border-border/60 py-6 text-center text-xs text-muted-foreground">
+      <div className="relative border-t border-border/60 py-6 text-center text-xs text-white/70">
         © {year} {t("brand")} · {t("footer_rights")}
       </div>
     </footer>
