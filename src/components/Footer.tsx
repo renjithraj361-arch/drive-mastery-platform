@@ -44,19 +44,19 @@ export function Footer() {
         </div>
         <div>
           <div className="mb-4 text-[10px] font-bold uppercase tracking-[0.3em] text-primary">Company</div>
-          <ul className="space-y-3 text-sm text-muted-foreground">
-            <li><Link to="/about" className="transition hover:text-foreground">{t("legal_about")}</Link></li>
-            <li><Link to="/contact" className="transition hover:text-foreground">{t("legal_contact")}</Link></li>
-            <li><Link to="/privacy" className="transition hover:text-foreground">{t("legal_privacy")}</Link></li>
-            <li><Link to="/terms" className="transition hover:text-foreground">{t("legal_terms")}</Link></li>
-            <li><Link to="/refund" className="transition hover:text-foreground">{t("legal_refund")}</Link></li>
-            <li><Link to="/disclaimer" className="transition hover:text-foreground">{t("legal_disclaimer")}</Link></li>
-            <li><Link to="/cookies" className="transition hover:text-foreground">{t("legal_cookies")}</Link></li>
-            <li><Link to="/faq" className="transition hover:text-foreground">{t("nav_faq")}</Link></li>
+          <ul className="space-y-3 text-sm text-white/85">
+            <li><Link to="/about" className="transition hover:text-primary">{t("legal_about")}</Link></li>
+            <li><Link to="/contact" className="transition hover:text-primary">{t("legal_contact")}</Link></li>
+            <li><Link to="/privacy" className="transition hover:text-primary">{t("legal_privacy")}</Link></li>
+            <li><Link to="/terms" className="transition hover:text-primary">{t("legal_terms")}</Link></li>
+            <li><Link to="/refund" className="transition hover:text-primary">{t("legal_refund")}</Link></li>
+            <li><Link to="/disclaimer" className="transition hover:text-primary">{t("legal_disclaimer")}</Link></li>
+            <li><Link to="/cookies" className="transition hover:text-primary">{t("legal_cookies")}</Link></li>
+            <li><Link to="/faq" className="transition hover:text-primary">{t("nav_faq")}</Link></li>
           </ul>
         </div>
       </div>
-      <div className="relative border-t border-border/60 py-6 text-center text-xs text-muted-foreground">
+      <div className="relative border-t border-border/60 py-6 text-center text-xs text-white/70">
         © {year} {t("brand")} · {t("footer_rights")}
       </div>
     </footer>
