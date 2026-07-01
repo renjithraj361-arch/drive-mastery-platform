@@ -21,7 +21,7 @@ export function Footer() {
               </div>
             </div>
           </div>
-          <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">{t("footer_built")}</p>
+          <p className="mt-5 max-w-md text-sm leading-relaxed text-white/75">{t("footer_built")}</p>
           <div className="mt-6 flex flex-wrap gap-2">
             <a href="tel:+919447480651" className="btn-premium btn-premium-hover !px-4 !py-2.5 !text-xs">
               +91 94474 80651
@@ -33,13 +33,13 @@ export function Footer() {
         </div>
         <div>
           <div className="mb-4 text-[10px] font-bold uppercase tracking-[0.3em] text-primary">Explore</div>
-          <ul className="space-y-3 text-sm text-muted-foreground">
-            <li><Link to="/programs" className="transition hover:text-foreground">{t("nav_programs")}</Link></li>
-            <li><Link to="/learning" className="transition hover:text-foreground">{t("nav_learning")}</Link></li>
-            <li><Link to="/vehicle" className="transition hover:text-foreground">{t("nav_vehicle")}</Link></li>
-            <li><Link to="/safety" className="transition hover:text-foreground">{t("nav_safety")}</Link></li>
-            <li><Link to="/signs" className="transition hover:text-foreground">{t("nav_signs")}</Link></li>
-            <li><Link to="/book" className="transition hover:text-foreground">{t("nav_book")}</Link></li>
+          <ul className="space-y-3 text-sm text-white/85">
+            <li><Link to="/programs" className="transition hover:text-primary">{t("nav_programs")}</Link></li>
+            <li><Link to="/learning" className="transition hover:text-primary">{t("nav_learning")}</Link></li>
+            <li><Link to="/vehicle" className="transition hover:text-primary">{t("nav_vehicle")}</Link></li>
+            <li><Link to="/safety" className="transition hover:text-primary">{t("nav_safety")}</Link></li>
+            <li><Link to="/signs" className="transition hover:text-primary">{t("nav_signs")}</Link></li>
+            <li><Link to="/book" className="transition hover:text-primary">{t("nav_book")}</Link></li>
           </ul>
         </div>
         <div>
